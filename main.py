@@ -6,8 +6,7 @@ app = FastAPI()
 
 def scrape_google_news_technology():
     # URL of the technology section of Google News
-    url = "https://news.google.com/topics/CAAqKggKIiRDQkFTRlFvSUwyMHZNRGRqTVhZU0JXVnVMVWRDR2dKSlRpZ0FQAQ?hl=en-IN&gl=IN&ceid=IN%3Aen"
-    # Sending a GET request to the URL
+    url = "https://news.google.com/topics/CAAqKQgKIiNDQkFTRkFvTEwyY3ZNVEl3ZVhKMk5tZ1NCV1Z1TFVkQ0tBQVAB?hl=en-IN&gl=IN&ceid=IN%3Aen"
     response = requests.get(url)
     
     # Checking if the request was successful
@@ -22,7 +21,7 @@ def scrape_google_news_technology():
     articles = []
     
     # Loop through all article links in the technology section
-    for item in soup.find_all('a', attrs={'class': 'gPFEn'}):
+    for item in soup.find_all('a', attrs={'class': 'JtKRv'}):
         # Extracting the title and the link
         title = item.get_text()
         link = item['href']
