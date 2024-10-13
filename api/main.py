@@ -1,9 +1,16 @@
 import requests
 from bs4 import BeautifulSoup
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
-
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow all origins, or specify: ["http://127.0.0.1:5500"]
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 def scrape_google_news_technology():
     # URL of the technology section of Google News
     url = "https://news.google.com/topics/CAAqKQgKIiNDQkFTRkFvTEwyY3ZNVEl3ZVhKMk5tZ1NCV1Z1TFVkQ0tBQVAB?hl=en-IN&gl=IN&ceid=IN%3Aen"

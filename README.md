@@ -9,3 +9,5 @@ uvicorn main:app --reload --port 8001
 # windows 
 python -m uvicorn main:app --reload --port 8001
 
+npx vercel 
+npx vercel --prod
